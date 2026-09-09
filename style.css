@@ -85,14 +85,12 @@ main {
     margin-bottom: 15px;
 }
 
-.map-placeholder {
-    height: 350px;
-    background: #e2e8f0;
+#map {
+    height: 400px;
+    width: 100%;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #64748b;
+    overflow: hidden;
+}
 }
 
 /* Footer */
