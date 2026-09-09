@@ -20,3 +20,42 @@ function checkFloodRisk() {
 }
 
 console.log("Current Flood Risk:", checkFloodRisk());
+// Initialize map
+const map = L.map("map").setView([17.3850, 78.4867], 12);
+
+// Add OpenStreetMap tiles
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors"
+}).addTo(map);
+
+// Example flood-risk locations
+const locations = [
+    {
+        name: "Area A",
+        risk: "HIGH",
+        lat: 17.3850,
+        lng: 78.4867
+    },
+    {
+        name: "Area B",
+        risk: "MEDIUM",
+        lat: 17.4100,
+        lng: 78.4500
+    },
+    {
+        name: "Area C",
+        risk: "LOW",
+        lat: 17.3500,
+        lng: 78.5200
+    }
+];
+
+// Add markers
+locations.forEach(location => {
+    L.marker([location.lat, location.lng])
+        .addTo(map)
+        .bindPopup(`
+            <b>${location.name}</b><br>
+            Flood Risk: ${location.risk}
+        `);
+});
