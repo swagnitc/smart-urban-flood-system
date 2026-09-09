@@ -181,3 +181,22 @@ footer {
         padding: 20px 5%;
     }
 }
+/* Rainfall Chart */
+.chart-section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 25px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.chart-section p {
+    color: #64748b;
+    margin-top: 6px;
+}
+
+.chart-container {
+    position: relative;
+    height: 320px;
+    margin-top: 20px;
+}
