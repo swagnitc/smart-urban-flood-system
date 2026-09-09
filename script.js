@@ -59,3 +59,32 @@ locations.forEach(location => {
             Flood Risk: ${location.risk}
         `);
 });
+function updatePrediction(rainfall) {
+
+    const riskBadge = document.getElementById("riskBadge");
+    const rainfallValue = document.getElementById("rainfallValue");
+    const predictionMessage = document.getElementById("predictionMessage");
+
+    rainfallValue.textContent = rainfall + " mm";
+
+    if (rainfall >= 50) {
+
+        riskBadge.textContent = "HIGH RISK";
+        predictionMessage.textContent =
+            "⚠️ High rainfall detected. Flood risk is elevated.";
+
+    } else if (rainfall >= 25) {
+
+        riskBadge.textContent = "MEDIUM RISK";
+        predictionMessage.textContent =
+            "⚠️ Moderate rainfall detected. Continue monitoring.";
+
+    } else {
+
+        riskBadge.textContent = "LOW RISK";
+        predictionMessage.textContent =
+            "✅ Current rainfall conditions show low flood risk.";
+    }
+}
+
+updatePrediction(42);
