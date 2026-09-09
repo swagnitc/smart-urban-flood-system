@@ -88,3 +88,43 @@ function updatePrediction(rainfall) {
 }
 
 updatePrediction(42);
+const ctx = document.getElementById("rainfallChart");
+
+new Chart(ctx, {
+    type: "line",
+
+    data: {
+        labels: [
+            "12 PM",
+            "1 PM",
+            "2 PM",
+            "3 PM",
+            "4 PM",
+            "5 PM"
+        ],
+
+        datasets: [{
+            label: "Rainfall (mm)",
+            data: [12, 18, 25, 31, 38, 42],
+            borderWidth: 3,
+            tension: 0.4,
+            fill: false
+        }]
+    },
+
+    options: {
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: "Rainfall (mm)"
+                }
+            }
+        }
+    }
+});
